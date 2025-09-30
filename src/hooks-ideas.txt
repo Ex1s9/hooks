@@ -45,30 +45,37 @@
    - Возвращает: {data, loading, error, refetch}
    - Применение: API запросы
 
-8. useOnClickOutside
+✅ 8. useDomPath
+   - Поиск и генерация CSS селекторов элементов DOM
+   - Возвращает: {findDomPath, findElementByPath}
+   - findDomPath: (container, target) => cssPath
+   - findElementByPath: (container, cssPath) => element
+   - Применение: автотесты, отладка, селекторы для скрапинга
+
+9. useOnClickOutside
    - Закрытие модалок по клику вне элемента
    - Принимает: ref, handler
    - Применение: дропдауны, модальные окна, меню
 
-9. useWindowSize
+10. useWindowSize
    - Отслеживание размера окна
    - Возвращает: {width, height}
    - Применение: адаптивный дизайн, ресайз
 
 === УРОВЕНЬ 4 - СЛОЖНЫЕ ===
 
-10. useInfiniteScroll
+11. useInfiniteScroll
     - Бесконечная прокрутка
     - Принимает: hasMore, loadMore
     - Возвращает: loading, error
     - Применение: ленты новостей, списки товаров
 
-11. useKeyboard
+12. useKeyboard
     - Обработка горячих клавиш
     - Принимает: keyMap объект
     - Применение: shortcuts, игры, навигация
 
-12. useAsync
+13. useAsync
     - Универсальный хук для асинхронных операций
     - Принимает: asyncFunction
     - Возвращает: {data, loading, error, execute}

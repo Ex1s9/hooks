@@ -32,6 +32,7 @@ src/
 │   ├── useDebounce.tsx # Задержка выполнения
 │   ├── useInterval.tsx # Безопасный setInterval
 │   ├── useFetch.tsx    # Загрузка данных
+│   ├── useDomPath.tsx  # Поиск CSS селекторов элементов
 │   └── useLearn.tsx    # Хук для обучения
 ├── hooks-ideas.txt     # Идеи и план изучения
 └── app/                # Next.js приложение
@@ -54,6 +55,7 @@ src/
 ### 🔴 Уровень 3 — Продвинутые
 
 - **✅ useFetch** — Загрузка данных с обработкой loading/error
+- **✅ useDomPath** — Поиск и генерация CSS селекторов элементов DOM
 - **⏳ useOnClickOutside** — Закрытие по клику вне элемента
 - **⏳ useWindowSize** — Отслеживание размера окна
 
@@ -105,6 +107,22 @@ useEffect(() => {
     searchAPI(debouncedSearchTerm);
   }
 }, [debouncedSearchTerm]);
+```
+
+### useDomPath
+```tsx
+const { findDomPath, findElementByPath } = useDomPath();
+const containerRef = useRef<HTMLDivElement>(null);
+
+const handleClick = (event: React.MouseEvent) => {
+  if (containerRef.current && event.target instanceof Element) {
+    const cssPath = findDomPath(containerRef.current, event.target);
+    console.log('CSS путь:', cssPath); // "div.card > h3.title"
+    
+    // Найдем элемент обратно по пути
+    const foundElement = findElementByPath(containerRef.current, cssPath);
+  }
+};
 ```
 
 ## 🛠️ Установка и запуск
