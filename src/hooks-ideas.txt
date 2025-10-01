@@ -52,34 +52,81 @@
    - findElementByPath: (container, cssPath) => element
    - Применение: автотесты, отладка, селекторы для скрапинга
 
-9. useOnClickOutside
+9. useElementRef
+   - Расширенная работа с ref элементов
+   - Возвращает: {ref, element, isConnected, scrollTo, focus, blur, getBoundingRect, getComputedStyle}
+   - Применение: прямое управление DOM элементами
+
+10. useOnClickOutside
    - Закрытие модалок по клику вне элемента
    - Принимает: ref, handler
    - Применение: дропдауны, модальные окна, меню
 
-10. useWindowSize
+11. useScrollToElement
+   - Плавная прокрутка к элементу
+   - Принимает: ref, options
+   - Возвращает: scrollTo функцию
+   - Применение: навигация по странице, якорные ссылки
+
+12. useResizeObserver
+   - Отслеживание изменения размеров элемента
+   - Принимает: ref, callback
+   - Возвращает: размеры и состояние наблюдения
+   - Применение: адаптивные компоненты, responsive дизайн
+
+13. useIntersectionObserver
+   - Отслеживание появления элемента в viewport
+   - Принимает: ref, options
+   - Возвращает: {isIntersecting, entry}
+   - Применение: ленивая загрузка, анимации при скролле
+
+14. useWindowSize
    - Отслеживание размера окна
    - Возвращает: {width, height}
    - Применение: адаптивный дизайн, ресайз
 
+15. useHover
+   - Отслеживание наведения мыши на элемент
+   - Принимает: ref
+   - Возвращает: isHovered boolean
+   - Применение: интерактивные эффекты, тултипы
+
+16. useFocusWithin
+   - Отслеживание фокуса внутри элемента
+   - Принимает: ref
+   - Возвращает: isFocusWithin boolean
+   - Применение: выделение активных форм, навигация
+
 === УРОВЕНЬ 4 - СЛОЖНЫЕ ===
 
-11. useInfiniteScroll
+17. useInfiniteScroll
     - Бесконечная прокрутка
     - Принимает: hasMore, loadMore
     - Возвращает: loading, error
     - Применение: ленты новостей, списки товаров
 
-12. useKeyboard
+18. useKeyboard
     - Обработка горячих клавиш
     - Принимает: keyMap объект
     - Применение: shortcuts, игры, навигация
 
-13. useAsync
+19. useAsync
     - Универсальный хук для асинхронных операций
     - Принимает: asyncFunction
     - Возвращает: {data, loading, error, execute}
     - Применение: любые async операции
+
+20. useDragAndDrop
+    - Drag & Drop для элементов
+    - Принимает: ref, options
+    - Возвращает: {isDragging, dragHandlers, dropHandlers}
+    - Применение: интерактивные списки, перетаскивание файлов
+
+21. useVirtualList
+    - Виртуализация больших списков
+    - Принимает: items, itemHeight, containerHeight
+    - Возвращает: visibleItems, scrollToIndex
+    - Применение: производительность для больших списков
 
 === РЕКОМЕНДУЕМЫЙ ПОРЯДОК ИЗУЧЕНИЯ ===
 
